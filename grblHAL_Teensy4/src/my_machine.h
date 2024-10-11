@@ -24,7 +24,7 @@
 // NOTE: Only one board may be enabled!
 // If none is enabled pin mappings from generic_map.h will be used
 //#define BOARD_T40X101
-//#define BOARD_T41U5XBB
+#define BOARD_T41U5XBB
 //#define BOARD_T41U5XBB_SS // For a modified T41U5XBB board, allows spindle sync to be enabled.
 //#define BOARD_T41BB5X_PRO
 //#define BOARD_CNC_BOOSTERPACK
@@ -35,17 +35,17 @@
 // Uncomment to enable, for some a value > 1 may be assigned, if so the default value is shown.
 
 /*
-              Plugin: | ETHERNET¹ | SDCARD¹ | KEYPAD | EEPROM | N_AXIS |
+              Plugin: | ETHERNETï¿½ | SDCARDï¿½ | KEYPAD | EEPROM | N_AXIS |
 ----------------------|-----------|---------|--------|--------|--------|
-BOARD_T40X101         | no        | no      | yes    | yes³   | max 4  |
-BOARD_T41U5XBB        | yes       | yes     | yes    | yes³   | max 5  |
+BOARD_T40X101         | no        | no      | yes    | yesï¿½   | max 4  |
+BOARD_T41U5XBB        | yes       | yes     | yes    | yesï¿½   | max 5  |
 BOARD_T41BB5X_PRO     | yes       | yes     | yes    | yes    | max 5  |
-BOARD_CNC_BOOSTERPACK | yes²      | yes     | yes    | yes    | max 3  |
+BOARD_CNC_BOOSTERPACK | yesï¿½      | yes     | yes    | yes    | max 3  |
 BOARD_GRBLHAL2000     | yes       | yes     | yes    | yes    | max 5  |
 
-¹ Teensy 4.1 only
-² External magjack.
-³ EEPROM is optional and must be added to the board.
+ï¿½ Teensy 4.1 only
+ï¿½ External magjack.
+ï¿½ EEPROM is optional and must be added to the board.
 
 N_AXIS has a default value of 3, edit grbl\config.h to increase.
 
@@ -68,7 +68,7 @@ N_AXIS has a default value of 3, edit grbl\config.h to increase.
 // **********************
 //#define MODBUS_ENABLE           1 // Set to 1 for auto direction, 2 for direction signal on auxillary output pin.
 //#define WEBUI_ENABLE            3 // Enable ESP3D-WEBUI plugin along with networking and SD card plugins.
-//#define ETHERNET_ENABLE         1 // Ethernet streaming. Enables networking plugin.
+#define ETHERNET_ENABLE         1 // Ethernet streaming. Enables networking plugin.
 //#define SDCARD_ENABLE           1 // Run gcode programs from SD card. Set to 2 to enable YModem upload.
 //#define LITTLEFS_ENABLE         1 // Enable flash based storage, automatically enabled if WebUI is enabled
 //#define QEI_ENABLE              1 // Enable quadrature encoder interfaces. Max value is 1. Requires encoder plugin.
@@ -112,8 +112,8 @@ N_AXIS has a default value of 3, edit grbl\config.h to increase.
 // of axes can be enabled here.
 //#define X_GANGED             1
 //#define X_AUTO_SQUARE        1
-//#define Y_GANGED             1
-//#define Y_AUTO_SQUARE        1
+#define Y_GANGED             1
+#define Y_AUTO_SQUARE        1
 //#define Z_GANGED             1
 //#define Z_AUTO_SQUARE        1
 // For ganged axes the limit switch input (if available) can be configured to act as a max travel limit switch.
@@ -124,8 +124,8 @@ N_AXIS has a default value of 3, edit grbl\config.h to increase.
 //
 
 #if ETHERNET_ENABLE || WEBUI_ENABLE
-//#define TELNET_ENABLE        1 // Telnet daemon - requires Ethernet streaming enabled.
-//#define WEBSOCKET_ENABLE     1 // Websocket daemon - requires Ethernet streaming enabled.
+#define TELNET_ENABLE        1 // Telnet daemon - requires Ethernet streaming enabled.
+#define WEBSOCKET_ENABLE     1 // Websocket daemon - requires Ethernet streaming enabled.
 //#define MDNS_ENABLE          1 // mDNS daemon.
 //#define SSDP_ENABLE          1 // SSDP daemon - requires HTTP enabled.
 //#define MQTT_ENABLE          1 // MQTT client API, only enable if needed by plugin code.
